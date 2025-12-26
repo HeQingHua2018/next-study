@@ -2,7 +2,7 @@ import Image, { type StaticImageData } from 'next/image';
 import React from 'react';
 
 interface IProps {
-  imgUrl: StaticImageData;
+  imgUrl: string | StaticImageData;
   altTxt?: string;
   content?: string;
 }

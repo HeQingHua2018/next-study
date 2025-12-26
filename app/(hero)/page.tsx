@@ -1,6 +1,5 @@
 import Hero from '@/components/hero';
 import React from 'react'
-import homSrc from '../public/2200.jpg';
 import { Metadata } from 'next';
 
 export const metadata:Metadata = {
@@ -9,7 +8,7 @@ export const metadata:Metadata = {
 
 const Home: React.FC = () => {
   return (
-    <Hero imgUrl={homSrc} content="Welcome to the Home Page"/>
+    <Hero imgUrl="/2200.jpg" content="Welcome to the Home Page"/>
   )
 }
 export default Home;

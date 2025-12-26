@@ -1,6 +1,5 @@
 import Hero from '@/components/hero'
 import React from 'react'
-import PerformSrc from '../../public/4377.jpg'
 import { Metadata } from 'next';
 
 /**
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
 }
 const Performance: React.FC = () => {
   return (
-      <Hero imgUrl={PerformSrc} content="Welcome to the Performance Page"/>
+      <Hero imgUrl="/4377.jpg" content="Welcome to the Performance Page"/>
   )
 }
 

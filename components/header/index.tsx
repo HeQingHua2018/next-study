@@ -7,13 +7,13 @@ import { usePathname } from 'next/navigation';
     {path: '/reliability', label: 'Reliability'},
     {path: '/scale', label: 'Scale'}
   ]
-  const accessLinkData = ['/', '/performance', '/reliability', '/scale'];
+  // const accessLinkData = ['/', '/performance', '/reliability', '/scale'];
 
 const Header: React.FC = () => {
   const pathname = usePathname();
-  if(!accessLinkData.includes(pathname)){
-    return null;
-  }
+  // if(!accessLinkData.includes(pathname)){
+  //   return null;
+  // }
   return (
     <div className="w-full absolute z-10 inset-0 text-white">
           <div className="flex justify-between container h-16 items-center mx-auto p-8 text-white">

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Comforter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
+
+// Font Configurations
+const inner = Comforter({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,9 +32,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${inner.className}`}
       >
-        <Header />
         {children}
       </body>
     </html>
