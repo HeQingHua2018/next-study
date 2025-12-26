@@ -8,7 +8,7 @@ interface IProps {
 }
 const Hero: React.FC<IProps> = ({ imgUrl, content, altTxt}) => {
   return (
-    <div className="h-screen relative">
+    <div className="h-screen relative text-white">
       <div className="absolute inset-0 -z-10">
         <Image
           src={imgUrl}
@@ -17,7 +17,7 @@ const Hero: React.FC<IProps> = ({ imgUrl, content, altTxt}) => {
           className="object-cover"
           priority
         />
-        <div className='absolute inset-0 bg-gradient-to-r from-gray-950'></div>
+        <div className='absolute inset-0 bg-linear-to-r from-gray-950'></div>
       </div>
       {content && (
         <div className="flex justify-center items-center h-full">
