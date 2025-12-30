@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Comforter } from "next/font/google";
 import "./globals.css";
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 // Font Configurations
 const inner = Comforter({
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${inner.className}`}
       >
         {children}
+        {/* <AntdRegistry>{children}</AntdRegistry> */}
       </body>
     </html>
   );
