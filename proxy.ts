@@ -20,18 +20,23 @@ export function proxy(request: NextRequest) {
   const token = request.cookies.get('token')?.value;
   const { pathname } = request.nextUrl;
   console.log('Request pathname:', pathname, 'Token:', token);
-  if (pathname !== '/login' && !token) {
-    const loginUrl = new URL('/login', request.url);
   
-    return NextResponse.redirect(loginUrl);
+  // 排除的路径列表（不需要登录的页面）
+  const publicPaths = ['/login', '/home', '/'];
+  
+  // 如果是公开路径或已登录，直接通过
+  if (publicPaths.includes(pathname) || token) {
+    return NextResponse.next();
   }
-
-  // return NextResponse.next();
+  
+  // 未登录且非公开路径，重定向到登录页
+  const loginUrl = new URL('/login', request.url);
+  return NextResponse.redirect(loginUrl);
 }
 
 export const config = {
   matcher: [
-    // Exclude API routes, static files, image optimizations, and .png files
+    // 排除 API 路由、静态文件、图像优化和 .png 文件
     '/((?!api|_next/static|_next/image|.*\\.png$).*)',
   ],
 };
